@@ -1,4 +1,6 @@
 %h1= @post.title
+= image_tag @post.image.url(:medium)
+/ %img{:src => "#{@post.image}", :alt => ""}/
 %p= @post.link
 %p= @post.description
 
