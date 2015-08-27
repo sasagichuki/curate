@@ -28,6 +28,8 @@ gem 'devise', '~> 3.5.2'
 gem 'simple_form', '~> 3.1.0'
 gem 'paperclip', '~> 4.3.0'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
