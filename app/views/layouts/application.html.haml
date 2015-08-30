@@ -1,27 +1,29 @@
 !!!
 %html
 	%head
-		%title Muse
-		= javascript_include_tag 'application'
-		%link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"}
-		%link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"}/
-		%link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"}/
+		%title ADCC Inspiration Room
+		
+		= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
+		= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+		= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+		= stylesheet_link_tag "application", :media => "all"
+
 		= csrf_meta_tags
 		
+		= javascript_include_tag 'application'
 
 	%body
-		%header
-			.wrapper.clearfix
-			#logo= link_to "Muse", root_path
-			%nav
+		%header.row.container
+			.twelve.columns
+			#logo.two.columns= link_to "ADCC Inspiration", root_path
+			%nav.five.columns
 				- if user_signed_in?
-					= link_to current_user.name, edit_user_registration_path
-					= link_to "Add new Inspiration", new_post_path, class: "button"
+					.three.columns= link_to current_user.name, edit_user_registration_path
+					.three.columns= link_to "Add new Inspiration", new_post_path, class: "button"
 				- else
 					= link_to "Sign In", new_user_session_path
 					= link_to "Sign Up", new_user_registration_path, class: "button"
 		%p.notice= notice
 		%p.alert= alert
 		
-		.wrapper
-			= yield
+		= yield

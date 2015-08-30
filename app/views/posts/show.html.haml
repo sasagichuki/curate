@@ -1,4 +1,4 @@
-#post_show
+#post_show.container
 	%h1= @post.title
 	%p.user.name
 		Shared By
@@ -28,7 +28,7 @@
 			%h3 Random Inspiration
 			.post
 				.post_image
-					= link_to (image_tag @random_post.image.url(:thumb)), post_path
+					= link_to (image_tag @random_post.image.url(:thumb)), post_path(@random_post)
 				.post_content
 					.title
 						%h2= link_to @random_post.title, post_path(@random_post)
@@ -44,10 +44,7 @@
 							%i.fa.fa-thumbs-o-up
 							= @random_post.get_likes.size
 
-
-
-
-#comment
+#comments.container
 	%h2.comment_count= pluralize(@post.comments.count, "Comment")
 	- @comments.each do |comment|
 		.comment
