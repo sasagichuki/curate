@@ -12,14 +12,14 @@
 		
 		= javascript_include_tag 'application'
 
-	%body
-		%header.row.container
+	%body.container
+		%header.row
 			.twelve.columns
-			#logo.two.columns= link_to "ADCC Inspiration", root_path
-			%nav.five.columns
+			#logo.two.columns= link_to (image_tag("adcc_logo.png")), root_path
+			%nav.nine.columns
 				- if user_signed_in?
-					.three.columns= link_to current_user.name, edit_user_registration_path
-					.three.columns= link_to "Add new Inspiration", new_post_path, class: "button"
+					.two.columns.new_insp_button.u-pull-right= link_to "Add new Inspiration", new_post_path, class: "button"
+					.two.columns.user_profile.u-pull-right= link_to current_user.name, edit_user_registration_path, class: "button"
 				- else
 					= link_to "Sign In", new_user_session_path
 					= link_to "Sign Up", new_user_registration_path, class: "button"

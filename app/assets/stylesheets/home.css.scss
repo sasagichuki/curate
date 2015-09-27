@@ -1,14 +1,54 @@
+body {
+	list-style: none;
+	min-width: 100% !important;
+}
+
+header{
+	background-color: #333;
+
+	#logo {
+		img {
+			height: 75px;
+			padding: 20px;
+		}
+	}
+
+	nav{
+		.new_insp_button{
+			// float: right;
+    		padding: 37px 0px;
+		}
+		.user_profile{
+			// float: right;
+    		padding: 37px 0px;
+		}
+	}
+}
+
 #intro {
-	background-color: #eee;
+	// background-color: #eee;
+	text-align: center;
 	height: 45vh;
 }
 
 #posts{
+	padding: 10px 20px;
 	.post{
+		h4 a{
+			text-decoration: none;
+			border-radius: 7px;
+			border-width: 2px;
+			border: #fff;
+		}
+
+		img {
+			border: 9px solid #eee;
+    		border-radius: 7px;
+		}
 
 	}
 }
 
-.notice .alert{
-	display: hidden;
+.notice, .alert{
+	display: none;
 }

@@ -1,7 +1,8 @@
 - if user_signed_in?
 	#intro.twelve.columns
-		%p Hello
-		= current_user.name
+		%h3
+			Hello, 
+			= current_user.name
 		%br/
 		%span
 			Share your inspiration and see what's inspiring others.
@@ -11,14 +12,14 @@
 		%br/
 		%span
 			Share your inspiration and see what's inspiring others.
-#posts.container.row
+%ul#posts.row
 	- @posts.each do |post|
-		.post.four.columns
+		%li.post.three.columns
 			.post_image
 				= link_to (image_tag post.image.url(:thumb)), post
 			.post_content
 				.title
-					%h2= link_to post.title, post
+					%h4= link_to post.title, post
 				.data.clearfix
 					%p.username
 						Shared By

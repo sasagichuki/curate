@@ -1,0 +1,40 @@
+/* Mobile first queries */
+body {
+		background-color: white;
+	}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+	body {
+		background-color: grey;
+	}
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+	body {
+		background-color: green;
+	}
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+	body {
+		background-color: orange;
+	}
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+	body {
+		background-color: blue;
+	}
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+
+	body {
+		background-color: #fff;
+	}
+}
